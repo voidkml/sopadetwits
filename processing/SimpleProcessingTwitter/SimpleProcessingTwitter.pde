@@ -1,6 +1,7 @@
-int totalTwits;
-int currentTwits;
-String [] tesTwit = new String[totalTwits];
+//int totalTwits;
+//int currentTwits;
+//int nuevosTwits;
+//String [] tesTwit = new String[nuevosTwits];
 
 TwC twitter;
 ArrayList searchResult;
