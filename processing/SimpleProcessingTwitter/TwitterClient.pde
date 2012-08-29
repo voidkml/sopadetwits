@@ -16,8 +16,8 @@
 // Good luck, and have fun!
 
 //variables para la detección de nuevos twits
-int totalTwits;
-int currentTwits;
+//int totalTwits;
+//int currentTwits;
 
 
 class TwC {
@@ -88,8 +88,8 @@ class TwC {
         for (int i=0; i<(currentTwits-totalTwits); i++) {
         Status status = (Status)statuses.get(i);
         println(status.getUser().getName() + ": " + status.getText());
-        String tui = status.getText();
-        println ("analicemos a:"+tui);
+        String tesTwit = status.getText();
+        println ("analicemos a:"+tesTwit);
       }
 
       totalTwits = currentTwits;  //se actualiza la cuenta total de twits 
