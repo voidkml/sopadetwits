@@ -15,6 +15,10 @@ CC-BY
 // right on your twitter app's page
 // Good luck, and have fun!
 
+//variables para la detección de nuevos twits
+int totalTwits;
+int currentTwits;
+
 
 class TwC{
   Twitter twitter = new TwitterFactory().getInstance();
@@ -73,11 +77,19 @@ class TwC{
     } catch(TwitterException e) { 
       println("Get timeline: " + e + " Status code: " + e.getStatusCode());
     }
+    
+    currentTwits = statuses.size(); //obtiene el tamaño del Array de Twits
+    if (currentTwits > totalTwits){ //determina si hay Twits nuevos
   
     for(int i=0; i<statuses.size(); i++) {
       Status status = (Status)statuses.get(i);
       println(status.getUser().getName() + ": " + status.getText());
     }
+    
+    totalTwits = currentTwits;  //se actualiza la cuenta total de twits 
+    println ("actuales:" + currentTwits); //control
+    }
+    
   }
     
   // Search for tweets
