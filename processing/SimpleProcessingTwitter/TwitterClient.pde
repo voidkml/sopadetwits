@@ -81,6 +81,14 @@ class TwC {
     catch(TwitterException e) { 
       println("Get timeline: " + e + " Status code: " + e.getStatusCode());
     }
+    
+    if (tuiteo == true ) {
+
+    sval = 0;
+    while (port.read ()!=100) {
+    }
+    tuiteo = false;
+  }else{
 
 
     if (currentTwits > totalTwits) { //determina si hay Twits nuevos
@@ -97,6 +105,7 @@ class TwC {
             
            if (palabras[n].equals("sopa")){
           println (palabras[n] + "esta es!") ;
+          port.write ("A");
           }
         
       }
@@ -105,6 +114,8 @@ class TwC {
       totalTwits = currentTwits;  //se actualiza la cuenta total de twits 
       println ("actuales:" + currentTwits); //control
     }
+  }
+  tuiteo = true;
   }
   }
 
