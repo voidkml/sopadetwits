@@ -93,24 +93,14 @@ class TwC {
         String[] palabras = split(tesTwit, ' ');
         println (palabras.length);
         println (palabras);
-        if (palabras.length < 6){
-          
-          for (int n=0; n<palabras.length; n++){
+        for (int n=0; n<palabras.length; n++){
             
            if (palabras[n].equals("sopa")){
           println (palabras[n] + "esta es!") ;
           }
-        }
+        
       }
-      if (palabras.length > 6 && palabras.length < 12){
-          
-          for (int n=0; n<palabras.length; n++){
-            
-           if (palabras[n].equals("sopa")){
-          println (palabras[n] + "esta es!") ;
-          }
-        }
-      }
+      
 
       totalTwits = currentTwits;  //se actualiza la cuenta total de twits 
       println ("actuales:" + currentTwits); //control
