@@ -82,13 +82,13 @@ class TwC {
       println("Get timeline: " + e + " Status code: " + e.getStatusCode());
     }
     
-    if (tuiteo == true ) {
-
-    sval = 0;
-    while (port.read ()!=100) {
-    }
-    tuiteo = false;
-  }else{
+    //if (tuiteo == true ) {
+     //println("twiteo = true");
+    //sval = 0;
+    //while (port.read ()!=100) {
+    //}
+    //tuiteo = false;
+  //}else{
 
 
     if (currentTwits > totalTwits) { //determina si hay Twits nuevos
@@ -101,22 +101,24 @@ class TwC {
         String[] palabras = split(tesTwit, ' ');
         println (palabras.length);
         println (palabras);
-        for (int n=0; n<palabras.length; n++){
+            
+          for (int n=0; n<palabras.length; n++){
             
            if (palabras[n].equals("sopa")){
-          println (palabras[n] + "esta es!") ;
-          port.write ("A");
+            println (palabras[n] + "esta es!") ;
+            if(tuiteo){ 
+              port.write("A");
+              tuiteo = false;
+            }
           }
-        
-      }
+        }  
       
-
       totalTwits = currentTwits;  //se actualiza la cuenta total de twits 
       println ("actuales:" + currentTwits); //control
     }
   }
-  tuiteo = true;
-  }
+  //tuiteo = true;
+  //}
   }
 
   // Search for tweets
@@ -135,6 +137,7 @@ class TwC {
     }
     return tweets;
   }
+
 
   ArrayList search(String ask, long since) {
     String queryStr = ask;

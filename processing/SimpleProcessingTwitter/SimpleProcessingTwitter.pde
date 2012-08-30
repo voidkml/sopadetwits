@@ -8,15 +8,19 @@ import processing.serial.*;
 Serial port;
 
 int sval;
-boolean tuiteo = false;
+boolean tuiteo = true;
 
 TwC twitter;
 ArrayList searchResult;
+
+long past;
+long interval = 10000;
 
 void setup() {
   
   size(100,100);
   background(0);
+  past = millis();
   port = new Serial(this, "COM5", 9600);
   twitter = new TwC("B9CmcpSUj1jdV1ziQ4x2Q",//OAuthConsumerKey 
                     "YjksaMYKPlDBh3QFHAKD3xkSNGowErW67wQUnPX6gc", //OAuthConsumerKeySecret
@@ -37,19 +41,27 @@ void setup() {
         long id = t.getId();	
         println(id);
   }
+  
+  
 }
 
 
 void draw() {
   background(0);
   
-
-
+  if(millis() - past > interval){
+    twitter.getTimeline();
+    past = millis();
+    println("checking");
+  }
     
-    
-  twitter.getTimeline();
-  
-  
+  //twitter.getTimeline(); 
+  if(port.available() > 0){
+    sval = port.read();
+    if(sval == 100){
+      tuiteo = true;
+    }
+  }
 }
 
 
