@@ -7,10 +7,10 @@ void setup() {
   size(100,100);
   background(0);
   
-  twitter = new TwC(" ",//OAuthConsumerKey 
-                    " ", //OAuthConsumerKeySecret
-                     " ", //AccessToken
-                     " " //AccessTokenSecret
+  twitter = new TwC("B9CmcpSUj1jdV1ziQ4x2Q",//OAuthConsumerKey 
+                    "YjksaMYKPlDBh3QFHAKD3xkSNGowErW67wQUnPX6gc", //OAuthConsumerKeySecret
+                     "788030407-P1mOfnyKuICh4UmEhD6Yc35nuxkyrju52fHHdAuP", //AccessToken
+                     "xLbB4iPR47n6gUcoYA8dPut49DGbrBsD7qQzZoJGV4" //AccessTokenSecret
                     );
   twitter.connect();
   twitter.send("hello world! from #processing");
