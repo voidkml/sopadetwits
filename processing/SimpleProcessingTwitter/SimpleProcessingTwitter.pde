@@ -2,6 +2,10 @@
 
 TwC twitter;
 
+long past;
+long interval = 30000;
+
+
 void setup() {
   
   size(100,100);
@@ -19,6 +23,14 @@ void setup() {
 
 void draw() {
   background(0);
+  
+  if (millis() - past > interval){
+    
+   println ("checking");
+   twitter.getTimeline();
+   past = millis();
+    
+  }
 }
 
 
