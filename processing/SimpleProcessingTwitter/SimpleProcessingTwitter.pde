@@ -5,6 +5,9 @@ TwC twitter;
 long past;
 long interval = 30000;
 
+int totalTwits;
+int currentTwits;
+
 
 void setup() {
   
