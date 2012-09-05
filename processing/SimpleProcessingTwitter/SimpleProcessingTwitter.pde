@@ -7,7 +7,7 @@ long interval = 30000;
 
 int totalTwits;
 int currentTwits;
-String palabraClave;
+String palabraClave = "sopa";
 
 
 void setup() {

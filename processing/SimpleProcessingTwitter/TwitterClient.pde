@@ -93,7 +93,15 @@ class TwC {
       }else{
        println ("se ha encontrado una diferencia");
        println ("analicemos a: " + tuits[0]);
+       String[] palabras = split (tuits[0], ' ');
+       println (palabras.length);
+       println (palabras);
        
+       for (int e = 0; e < palabras.length; e++){
+         if (palabras[e].equals("sopa")){
+           println (palabras + "esta es!");
+         }
+       }
       //lastTuit = tuits; 
       }
       lastTuit = tuits[0];
