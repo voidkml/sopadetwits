@@ -98,7 +98,7 @@ class TwC {
        println (palabras);
        
        for (int e = 0; e < palabras.length; e++){
-         if (palabras[e].equals("sopa")){
+         if (palabras[e].equals(palabraClave)){
            println (palabras + "esta es!");
          }
        }
