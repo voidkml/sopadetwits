@@ -2,6 +2,10 @@
 
 TwC twitter;
 
+import processing.serial.*;
+
+Serial port;
+
 long past;
 long interval = 30000;
 
@@ -15,6 +19,8 @@ void setup() {
   
   size(100,100);
   background(0);
+  
+  port = new Serial(this, "COM5", 9600);
   
   twitter = new TwC("B9CmcpSUj1jdV1ziQ4x2Q",//OAuthConsumerKey 
                     "YjksaMYKPlDBh3QFHAKD3xkSNGowErW67wQUnPX6gc", //OAuthConsumerKeySecret
@@ -38,7 +44,8 @@ void draw() {
   }
   
   if (tuitClave == true) {
-   println ("palabra clave encontrada, enviando mensaje..."); 
+   println ("palabra clave encontrada, enviando mensaje...");
+   port.write("A"); 
    tuitClave = false;
   }
   

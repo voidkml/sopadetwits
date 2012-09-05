@@ -89,7 +89,8 @@ class TwC {
       }*/
       }
       if (tuits[0].equals (lastTuit)){
-       println ("se ha encontrado una igualdad");        
+       println ("se ha encontrado una igualdad"); 
+       port.write("B");       
       }else{
        println ("se ha encontrado una diferencia");
        println ("analicemos a: " + tuits[0]);
@@ -101,6 +102,9 @@ class TwC {
          if (palabras[e].equals(palabraClave)){
            println (palabras + "esta es!");
            tuitClave = true;
+         }else{
+          println ("no hay palabra clave");
+          port.write("B"); 
          }
        }
       //lastTuit = tuits; 
