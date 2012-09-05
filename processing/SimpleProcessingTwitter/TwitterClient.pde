@@ -15,7 +15,7 @@
 // right on your twitter app's page
 // Good luck, and have fun!
 
-String tuits;
+String[] tuits = new String[20];
 String lastTuit;
 
 class TwC {
@@ -81,20 +81,22 @@ class TwC {
       for (int i=0; i<statuses.size(); i++) {
         Status status = (Status)statuses.get(i);
         println(status.getUser().getName() + ": " + status.getText());
-        tuits = status.getText();
-        if (tuits.equals (lastTuit)){
+        tuits[i] = status.getText();
+        /*if (tuits.equals (lastTuit)){
        println ("se ha encontrado una igualdad"); 
       }else{
        println ("se ha encontrado una diferencia"); 
+      }*/
       }
-      }
-      if (tuits.equals (lastTuit)){
-       println ("se ha encontrado una igualdad"); 
+      if (tuits[0].equals (lastTuit)){
+       println ("se ha encontrado una igualdad");        
       }else{
        println ("se ha encontrado una diferencia");
-      lastTuit = tuits; 
+       println ("analicemos a: " + tuits[0]);
+       
+      //lastTuit = tuits; 
       }
-      lastTuit = tuits;
+      lastTuit = tuits[0];
       println ("fin");
       //totalTwits = currentTwits;
       //println ("Twits actuales:" + currentTwits);
