@@ -100,6 +100,7 @@ class TwC {
        for (int e = 0; e < palabras.length; e++){
          if (palabras[e].equals(palabraClave)){
            println (palabras + "esta es!");
+           tuitClave = true;
          }
        }
       //lastTuit = tuits; 

@@ -8,6 +8,7 @@ long interval = 30000;
 int totalTwits;
 int currentTwits;
 String palabraClave = "sopa";
+boolean tuitClave = false;
 
 
 void setup() {
@@ -35,6 +36,12 @@ void draw() {
    past = millis();
     
   }
+  
+  if (tuitClave == true) {
+   println ("palabra clave encontrada, enviando mensaje..."); 
+   tuitClave = false;
+  }
+  
 }
 
 
