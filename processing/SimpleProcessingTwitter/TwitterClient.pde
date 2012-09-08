@@ -96,6 +96,7 @@ class TwC {
        println ("analicemos a: " + tuits[0]);
        String[] palabras = split (tuits[0], ' ');
        println (palabras.length);
+       pwmOut = palabras.length;
        println (palabras);
        
        for (int e = 0; e < palabras.length; e++){
